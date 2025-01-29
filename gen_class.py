@@ -48,12 +48,3 @@ class GeneratorTools:
       result.append(i)
     return result
   
-
-generator_tools = GeneratorTools()
-print(generator_tools.prime(2,20))
-print(generator_tools.cube(2,20))
-print(generator_tools.square(2,20))
-print(generator_tools.combinations([1,2,3], 2))
-print(generator_tools.iter_combinations([1,2,3], 2))
-print(generator_tools.permutations([1,2,3]))
-print(generator_tools.iter_permutations([1,2,3]))
