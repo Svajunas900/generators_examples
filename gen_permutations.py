@@ -8,8 +8,3 @@ def generate_permutations(input_list: list):
       rest = input_list[:i] + input_list[i+1:]
       for perm in generate_permutations(rest):
         yield [input_list[i]] + perm
-
-gen = generate_permutations([1,2,3])
-print(next(gen))
-print(next(gen))
-  

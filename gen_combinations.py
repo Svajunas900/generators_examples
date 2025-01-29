@@ -8,5 +8,4 @@ def generate_combinations(user_input:list, r):
       yield [user_input[0]] + combo
     yield from generate_combinations(user_input[1:], r)
 
-gen = generate_combinations(['A', 'B', 'C', 'D'], 3)
-print(next(gen))
+
