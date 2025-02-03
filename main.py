@@ -1,12 +1,16 @@
 from gen_class import GeneratorTools
 from flask import Flask, request
+from fastapi import FastAPI
 import json
+from typing import Union
 
-app = Flask(__name__)
+
+# app = Flask(__name__)
+app = FastAPI()
 
 @app.get("/")
-def home():
-  return "Hello world"
+def home(q: Union[str, None] = None):
+  return {"Hello world": "Hello world", "q": q}
 
 
 @app.post("/generators")
@@ -17,7 +21,7 @@ def generators():
   second_number = data["second"]
   gen_tools = GeneratorTools()
   if method == "itertools_combination":
-    result = gen_tools.iter_combinations(number_range, 2,second_number)
+    result = gen_tools.iter_combinations(number_range, 2, second_number)
   if method == "itertools_permutation":
     result = gen_tools.iter_permutations(number_range, second_number)
   if method == "combination":
@@ -34,5 +38,5 @@ def generators():
                      "Result": result})
 
 
-if __name__ == "__main__":
-  app.run(debug=True)
+# if __name__ == "__main__":
+#   app.run(debug=True)

@@ -1,4 +1,7 @@
-def generate_permutations(input_list: list):
+from typing import Generator
+
+
+def generate_permutations(input_list: list) -> Generator[list, None, None]:
   if len(input_list) == 0:
         yield []
   elif len(input_list) == 1:

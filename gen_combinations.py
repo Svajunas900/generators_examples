@@ -1,4 +1,7 @@
-def generate_combinations(user_input:list, r):
+from typing import Generator
+
+
+def generate_combinations(user_input:list, r:int) -> Generator[list, None, None]:
   if r == 0:
     yield []
   elif len(user_input) == 0 or r > len(user_input):
