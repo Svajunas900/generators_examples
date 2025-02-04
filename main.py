@@ -1,8 +1,8 @@
 from gen_class import GeneratorTools
-from flask import Flask, request
-from fastapi import FastAPI
+from flask import Flask, request, session
 import json
 from typing import Union
+from models import User
 
 
 app = Flask(__name__)
