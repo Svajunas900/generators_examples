@@ -5,8 +5,8 @@ import json
 from typing import Union
 
 
-# app = Flask(__name__)
-app = FastAPI()
+app = Flask(__name__)
+
 
 @app.get("/")
 def home(q: Union[str, None] = None):
@@ -38,5 +38,5 @@ def generators():
                      "Result": result})
 
 
-# if __name__ == "__main__":
-#   app.run(debug=True)
+if __name__ == "__main__":
+  app.run(debug=True)
